@@ -49,8 +49,6 @@ The page uses a full-width layout on mobile and a centered card on larger screen
 
 ### What I learned
 
-## What I learned
-
 I learned how to create custom list markers with the `::before` pseudo-element. For the ingredients and preparation lists, I replaced the default bullets with small circles and used Flexbox to control the spacing between each marker and its text. Setting `flex-shrink: 0` keeps the markers from shrinking when the text wraps.
 
 For the instructions, I practiced using CSS counters to generate step numbers automatically:
