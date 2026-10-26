@@ -1,4 +1,4 @@
-# Frontend Mentor - Social links profile solution
+# Frontend Mentor - Recipe page solution
 
 This is a solution to the [Recipe page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm). Frontend Mentor challenges help you improve your coding skills by building realistic projects.  
 
@@ -20,6 +20,14 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 
 ### The challenge
 
+Build a responsive recipe page that closely matches the provided design.
+
+Users should be able to:
+
+- View an optimal layout for their device's screen size.
+- Read clearly organized recipe sections, including preparation time, ingredients, instructions, and nutritional information.
+
+The page uses a full-width layout on mobile and a centered card on larger screens. Media queries at `640px` and `1024px` adjust the card width, spacing, typography, and corner rounding to match the tablet and desktop designs.
 
 ### Screenshot
 
@@ -36,21 +44,41 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 
 - Semantic HTML5 markup
 - CSS custom properties
-- CSS Grid
+- Flexbox
 - Mobile-first workflow
-
 
 ### What I learned
 
+## What I learned
 
+I learned how to create custom list markers with the `::before` pseudo-element. For the ingredients and preparation lists, I replaced the default bullets with small circles and used Flexbox to control the spacing between each marker and its text. Setting `flex-shrink: 0` keeps the markers from shrinking when the text wraps.
+
+For the instructions, I practiced using CSS counters to generate step numbers automatically:
+
+```css
+ol {
+    counter-reset: instructions;
+}
+
+ol li {
+    counter-increment: instructions;
+}
+
+ol li::before {
+    content: counter(instructions) ".";
+    flex-shrink: 0;
+    font-weight: 800;
+    color: #854632;
+}
+```
+
+I also learned how to style a nutrition table using `border-collapse: collapse` and structural pseudo-classes. With `:first-child` and `:last-child`, I applied different padding to the label and value columns. Using `:not(:last-child)` allowed me to add separators between rows without adding a border below the final row.
 
 ### Continued development
 
-In future projects, I want to deepen my understanding of HTML and CSS, with a focus on semantic HTML, responsive design, and building layouts with Grid and Flexbox. I also want to become more confident in managing spacing and choosing the right layout approach for each task.
+My next step is to test how this recipe page handles longer content and increased text sizes. I plan to replace some ingredients and instructions with longer examples, then check the layout at a narrow viewport width of `320px` and at `200%` browser zoom.
 
-My next step is to start learning JavaScript so I can add interactivity to my pages. I plan to begin with the fundamentals, then practice working with the DOM and handling user events.
-
-I also want to improve accessibility and write cleaner, more organized code as I build new projects.
+I want to verify that custom bullets and step numbers stay aligned with their text, the nutrition table remains readable, and no content causes horizontal scrolling. If I find problems, I will adjust the spacing and sizing rules, then repeat the same tests to check whether the changes resolve them.
 
 ### Useful resources
 
