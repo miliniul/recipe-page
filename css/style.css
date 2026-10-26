@@ -58,7 +58,8 @@ div h2 {
     font-weight: 400;
 }
 
-h1, h2 {
+h1,
+h2 {
     line-height: 1;
 }
 
@@ -68,6 +69,7 @@ h1 {
 }
 
 h2 {
+    font-size: 1.5rem;
     color: #854632;
 }
 
@@ -119,11 +121,11 @@ ul li::before {
     border-radius: 100%;
 }
 
-.preparation li::before{
+.preparation li::before {
     background-color: #7A284E;
 }
 
-.ingredients li::before{
+.ingredients li::before {
     background-color: #854632;
 }
 
@@ -135,7 +137,7 @@ ol li {
     counter-increment: instructions;
 }
 
-ol li::before{
+ol li::before {
     flex-shrink: 0;
     content: counter(instructions)".";
     font-weight: 800;
@@ -163,13 +165,17 @@ tr:not(:first-child) td {
 }
 
 tr:not(:last-child) td {
-   border-bottom: 1px solid #E3DDD7;
-   padding-bottom: 12px;
+    border-bottom: 1px solid #E3DDD7;
+    padding-bottom: 12px;
 }
 
 .value {
     font-weight: 800;
     color: #854632;
+}
+
+footer {
+    padding: 5px;
 }
 
 .attribution {
@@ -179,4 +185,41 @@ tr:not(:last-child) td {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media (width >=640px) {
+    body {
+        align-items: center;
+        padding: 128px 48px 0 48px;
+
+        background-color: #F3E5D7;
+    }
+
+    main {
+        gap: 40px;
+
+        width: min(616px, 100%);
+        padding: 40px;
+        margin-bottom: 128px;
+
+        border-radius: 24px;
+    }
+
+    .top-image {
+        border-radius: 12px;
+    }
+
+    .text-content {
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (width >=1024px) {
+    main {
+        width: min(736px, 100%);
+    }
 }
